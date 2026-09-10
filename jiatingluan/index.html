@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家庭乱胔大杂烩 - 家庭生活杂谈与日常经验分享社区</title>
+<meta name="description" content="家庭乱胔大杂烩是一个聚焦家庭生活杂谈的分享社区，汇集居家琐事、亲子日常、家庭关系、生活窍门与经验交流，帮你在繁杂的家庭日常里找到实用参考与共鸣。">
+<meta name="keywords" content="家庭乱胔大杂烩,家庭生活,居家杂谈,亲子日常,家庭关系,生活窍门,家庭社区">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#fbf7f0;
+    --bg-soft:#f4ece0;
+    --ink:#2f2a24;
+    --ink-soft:#6b6055;
+    --line:#e3d7c6;
+    --brand:#c25b3a;
+    --brand-deep:#9c4227;
+    --accent:#3f6b5c;
+    --card:#ffffff;
+    --radius:14px;
+    --shadow:0 6px 20px rgba(80,55,35,.08);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ---------- 顶栏 ---------- */
+  .site-header{
+    background:linear-gradient(180deg,#fff9f2 0%, #fdf3e8 100%);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter:blur(6px);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding:14px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+  }
+  .brand-mark{
+    width:44px;height:44px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--brand),#e08a5f);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:1px;
+    box-shadow:0 4px 12px rgba(194,91,58,.28);
+  }
+  .brand-text b{
+    display:block;
+    font-size:17px;
+    letter-spacing:.5px;
+  }
+  .brand-text span{
+    display:block;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .main-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .main-nav a{
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    transition:.2s;
+  }
+  .main-nav a:hover,
+  .main-nav a.active{
+    background:#fff;
+    color:var(--brand-deep);
+    box-shadow:0 2px 8px rgba(160,110,70,.12);
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    padding:48px 0 36px;
+    background:
+      radial-gradient(1000px 320px at 12% -10%, #fde9d8 0%, rgba(253,233,216,0) 70%),
+      radial-gradient(800px 300px at 92% 0%, #e6efe9 0%, rgba(230,239,233,0) 70%);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:36px;
+    align-items:start;
+  }
+  .hero h1{
+    font-size:34px;
+    line-height:1.35;
+    margin:0 0 16px;
+    letter-spacing:.5px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--brand-deep);
+    background:linear-gradient(180deg,transparent 62%, #f7d9c6 62%);
+    padding:0 2px;
+  }
+  .hero p.lead{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+    max-width:56ch;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:26px;
+  }
+  .btn{
+    display:inline-block;
+    padding:11px 24px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    transition:.2s;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--brand);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(194,91,58,.3);
+  }
+  .btn-primary:hover{background:var(--brand-deep);}
+  .btn-ghost{
+    background:#fff;
+    border-color:var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep);}
+
+  .hero-points{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    list-style:none;
+    padding:0;margin:0;
+  }
+  .hero-points li{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 16px;
+    font-size:14px;
+    color:var(--ink-soft);
+    box-shadow:var(--shadow);
+  }
+  .hero-points li b{
+    display:block;
+    color:var(--ink);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+
+  /* 侧边速览 */
+  .quick-panel{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .quick-panel h2{
+    font-size:16px;
+    margin:0 0 14px;
+    padding-bottom:10px;
+    border-bottom:1px dashed var(--line);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .quick-panel h2 span{
+    font-size:12px;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .quick-list{
+    list-style:none;padding:0;margin:0;
+  }
+  .quick-list li{
+    padding:10px 0;
+    border-bottom:1px solid #f3ece2;
+    font-size:14.5px;
+  }
+  .quick-list li:last-child{border-bottom:none;}
+  .quick-list .tag{
+    display:inline-block;
+    font-size:12px;
+    color:var(--accent);
+    background:#eaf2ee;
+    border-radius:6px;
+    padding:1px 8px;
+    margin-right:8px;
+  }
+  .quick-list a:hover{color:var(--brand-deep);}
+
+  /* ---------- 通用区块 ---------- */
+  section.block{
+    padding:44px 0;
+  }
+  .block-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+  }
+  .block-head h2{
+    font-size:23px;
+    margin:0;
+    letter-spacing:.5px;
+  }
+  .block-head p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    max-width:62ch;
+  }
+  .section-alt{
+    background:var(--bg-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  /* ---------- 话题卡片 ---------- */
+  .topic-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .topic-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    transition:.22s;
+  }
+  .topic-card:hover{
+    transform:translateY(-3px);
+    border-color:#e8cdb8;
+  }
+  .topic-card .icon{
+    width:40px;height:40px;
+    border-radius:10px;
+    background:#fbeadf;
+    color:var(--brand-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .topic-card h3{
+    font-size:17px;
+    margin:0 0 10px;
+  }
+  .topic-card p{
+    margin:0 0 14px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    flex-grow:1;
+  }
+  .topic-card .meta{
+    font-size:12.5px;
+    color:#9a8d80;
+    display:flex;
+    gap:12px;
+    border-top:1px dashed var(--line);
+    padding-top:12px;
+  }
+
+  /* ---------- 文章列表 ---------- */
+  .article-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:32px;
+    align-items:start;
+  }
+  .article-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .article-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    box-shadow:var(--shadow);
+    transition:.2s;
+  }
+  .article-item:hover{border-color:#e8cdb8;}
+  .article-item h3{
+    margin:0 0 8px;
+    font-size:17.5px;
+  }
+  .article-item h3 a:hover{color:var(--brand-deep);}
+  .article-item p{
+    margin:0 0 12px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .article-item .info{
+    font-size:12.5px;
+    color:#9a8d80;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .article-item .info .cat{
+    color:var(--accent);
+  }
+
+  /* 侧栏 */
+  .side-col{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .side-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+    box-shadow:var(--shadow);
+  }
+  .side-card h3{
+    font-size:15.5px;
+    margin:0 0 14px;
+    padding-left:10px;
+    border-left:3px solid var(--brand);
+  }
+  .side-card ol,.side-card ul{
+    margin:0;padding-left:20px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .side-card li{padding:5px 0;}
+  .side-card li a:hover{color:var(--brand-deep);}
+  .tip-box{
+    background:#f3f8f5;
+    border:1px solid #d8e8e0;
+    border-radius:var(--radius);
+    padding:18px;
+    font-size:14px;
+    color:#3d5c50;
+  }
+  .tip-box b{color:var(--accent);}
+
+  /* ---------- 经验方法 ---------- */
+  .method-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .method-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+    box-shadow:var(--shadow);
+  }
+  .method-card .step{
+    font-size:13px;
+    font-weight:700;
+    color:var(--brand);
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .method-card h3{
+    font-size:16px;
+    margin:0 0 8px;
+  }
+  .method-card p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 20px;
+    box-shadow:var(--shadow);
+  }
+  .faq-item h3{
+    font-size:15.5px;
+    margin:0 0 8px;
+    color:var(--brand-deep);
+  }
+  .faq-item p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- 页脚 ---------- */
+  .site-footer{
+    background:#2f2a24;
+    color:#d8cfc4;
+    padding:44px 0 26px;
+    margin-top:20px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:28px;
+    padding-bottom:28px;
+    border-bottom:1px solid #463f37;
+  }
+  .footer-grid h4{
+    font-size:15px;
+    color:#fff;
+    margin:0 0 14px;
+  }
+  .footer-grid p{
+    font-size:13.5px;
+    margin:0 0 10px;
+    color:#b3a99d;
+  }
+  .footer-grid ul{
+    list-style:none;padding:0;margin:0;
+    font-size:13.5px;
+  }
+  .footer-grid li{padding:4px 0;}
+  .footer-grid a{color:#b3a99d;}
+  .footer-grid a:hover{color:#fff;}
+  .footer-bottom{
+    padding-top:20px;
+    font-size:12.5px;
+    color:#8d8377;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .topic-grid{grid-template-columns:repeat(2,1fr);}
+    .article-layout{grid-template-columns:1fr;}
+    .method-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .header-inner{flex-direction:column;align-items:flex-start;}
+    .main-nav{gap:4px;}
+    .main-nav a{padding:6px 12px;font-size:14px;}
+    .hero{padding:32px 0 24px;}
+    .hero h1{font-size:25px;}
+    .hero-points{grid-template-columns:1fr;}
+    .topic-grid{grid-template-columns:1fr;}
+    .method-grid{grid-template-columns:1fr;}
+    .faq-list{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .block-head h2{font-size:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">家</div>
+      <div class="brand-text">
+        <b>家庭乱胔大杂烩</b>
+        <span>居家琐事 · 亲子日常 · 生活经验交流</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#topics" class="active">话题分类</a>
+      <a href="#latest">最新分享</a>
+      <a href="#methods">经验方法</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>家庭乱胔大杂烩：把一地鸡毛的<em>家庭日常</em>，聊成有用的经验</h1>
+        <p class="lead">
+          家里的事从来不是一件件排好队来的：孩子的作业、老人的药、厨房的油污、夫妻间说不清的别扭、亲戚往来的分寸……它们总是混在一起扑面而来。家庭乱胔大杂烩就是一个把这些琐碎摊开来聊的地方——不评判谁对谁错，只把真实场景、可行做法和踩过的坑讲清楚，供你按自家情况取用。
+        </p>
+        <div class="hero-actions">
+          <a href="#topics" class="btn btn-primary">浏览话题分类</a>
+          <a href="#methods" class="btn btn-ghost">看整理方法</a>
+        </div>
+        <ul class="hero-points">
+          <li><b>按场景找</b>厨房、育儿、收纳、家庭关系各有分区</li>
+          <li><b>讲做法不讲道理</b>给出可执行步骤与替代方案</li>
+          <li><b>承认差异</b>不同家庭条件不同，建议仅供参考</li>
+        </ul>
+      </div>
+
+      <aside class="quick-panel" aria-label="热门话题速览">
+        <h2>大家在聊什么 <span>实时更新</span></h2>
+        <ul class="quick-list">
+          <li><span class="tag">收纳</span><a href="#latest">小户型厨房台面总是堆满怎么办</a></li>
+          <li><span class="tag">育儿</span><a href="#latest">孩子写作业磨蹭，家长先调整哪一步</a></li>
+          <li><span class="tag">关系</span><a href="#latest">和长辈同住，边界感怎么慢慢谈</a></li>
+          <li><span class="tag">家务</span><a href="#latest">家务分工谈不拢时的折中思路</a></li>
+          <li><span class="tag">开销</span><a href="#latest">家庭日常开支怎么记才不半途而废</a></li>
+          <li><span class="tag">健康</span><a href="#latest">家里常备药怎么整理才不容易过期</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 话题分类 -->
+  <section class="block" id="topics">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>话题分类</h2>
+        <p>家庭生活涉及的面很杂，先按场景分区，方便你直接跳到关心的部分。每个分类下都是同类场景的讨论与经验汇总。</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card">
+          <div class="icon">厨</div>
+          <h3>厨房与三餐</h3>
+          <p>备菜顺序、冰箱分区、剩菜处理、油烟清洁、一周菜谱怎么排。重点解决“做饭不难、收拾太累”的日常矛盾。</p>
+          <div class="meta"><span>场景：烹饪 · 清洁</span><span>适合：做饭主力</span></div>
+        </article>
+        <article class="topic-card">
+          <div class="icon">育</div>
+          <h3>育儿与陪伴</h3>
+          <p>作业习惯、作息安排、情绪安抚、兄弟姐妹相处、屏幕时间管理。不追求标准答案，只提供可尝试的沟通方式。</p>
+          <div class="meta"><span>场景：学龄前后</span><span>适合：家长</span></div>
+        </article>
+        <article class="topic-card">
+          <div class="icon">收</div>
+          <h3>收纳与整理</h3>
+          <p>玄关、衣柜、儿童玩具、阳台杂物。从“先减量再收纳”的思路出发，讨论适合小户型和多人同住的整理方案。</p>
+          <div class="meta"><span>场景：全屋</span><span>适合：租房/自住</span></div>
+        </article>
+        <article class="topic-card">
+          <div class="icon">和</div>
+          <h3>家庭关系</h3>
+          <p>夫妻分工、婆媳相处、亲子边界、亲戚往来。关注怎么把话说出口、怎么在坚持与让步之间找到平衡点。</p>
+          <div class="meta"><span>场景：沟通</span><span>适合：同住家庭</span></div>
+        </article>
+        <article class="topic-card">
+          <div class="icon">账</div>
+          <h3>开销与账目</h3>
+          <p>日常记账、大额支出商量、孩子零花钱、家庭应急储备。强调“先看清钱去哪了”，再谈省钱与规划。</p>
+          <div class="meta"><span>场景：家庭财务</span><span>适合：共同管钱</span></div>
+        </article>
+        <article class="topic-card">
+          <div class="icon">安</div>
+          <h3>居家安全与健康</h3>
+          <p>用电用气检查、常备药整理、老人防滑、儿童居家防护。以排查清单的形式，帮助减少可预防的居家风险。</p>
+          <div class="meta"><span>场景：全屋排查</span><span>适合：有老有小</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新分享 + 侧栏 -->
+  <section class="block section-alt" id="latest">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>最新分享</h2>
+        <p>来自日常场景的整理与讨论。内容为经验性描述，具体做法请结合自家房屋条件、成员情况和当地规定判断。</p>
+      </div>
+
+      <div class="article-layout">
+        <div class="article-list">
+
+          <article class="article-item">
+            <h3><a href="#latest">厨房台面永远堆满？先处理“落点”而不是买收纳盒</a></h3>
+            <p>台面乱，往往不是因为东西多，而是每样东西进门后没有固定落点。可以先统计一周内被随手放在台面上的物品，找出重复出现的三五类，再为它们各安排一个“下车点”，最后才考虑收纳容器。</p>
+            <div class="info"><span class="cat">厨房与三餐</span><span>整理思路</span><span>约 6 分钟阅读</span></div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#latest">孩子写作业磨蹭，家长先调整的是自己的介入时机</a></h3>
+            <p>很多磨蹭背后是任务太大、启动困难。与其反复催促，不如把作业拆成看得见的小段，明确“先做哪一题”，并在开始阶段陪着坐几分钟，等进入状态后再退出。介入太早或太晚，效果差别很大。</p>
+            <div class="info"><span class="cat">育儿与陪伴</span><span>沟通方式</span><span>约 7 分钟阅读</span></div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#latest">和长辈同住，边界感不是一次谈成的事</a></h3>
+            <p>同住家庭的分歧常集中在作息、饮食和带娃方式上。与其追求一次说清楚，不如先约定少数几条双方都能接受的“硬规则”，其余部分留出弹性，用时间换理解，比正面争论更容易推进。</p>
+            <div class="info"><span class="cat">家庭关系</span><span>相处经验</span><span>约 8 分钟阅读</span></div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#latest">家务分工谈不拢，试试按“可支配时间”而不是按件数分</a></h3>
+            <p>按件数平分家务常常引发争议，因为每件事耗时不同。可以先各自列出工作日和周末真正可自由支配的时间，再据此分配任务，并约定每周复盘一次，允许临时互换。</p>
+            <div class="info"><span class="cat">家庭关系</span><span>分工方法</span><span>约 5 分钟阅读</span></div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#latest">家庭记账总是半途而废，多半是分类太细</a></h3>
+            <p>刚开始记账时，分类越多越难坚持。可以先只分“固定支出、日常开销、临时大额”三类，坚持一个月后再按需要细分。记账的目的是看清流向，而不是把每一笔都记得完美。</p>
+            <div class="info"><span class="cat">开销与账目</span><span>实用建议</span><span>约 5 分钟阅读</span></div>
+          </article>
+
+          <article class="article-item">
+            <h3><a href="#latest">家里常备药怎么整理，才不容易放到过期</a></h3>
+            <p>把药品集中放在干燥、避光、儿童拿不到的位置，按用途分组，并定期检查有效期。对已经开封的液体类药物，注意查看说明书中关于开封后使用期限的提示，不确定时咨询药师更稳妥。</p>
+            <div class="info"><span class="cat">居家安全与健康</span><span>排查清单</span><span>约 4 分钟阅读</span></div>
+          </article>
+
+        </div>
+
+        <aside class="side-col">
+          <div class="side-card">
+            <h3>本周关注榜</h3>
+            <ol>
+              <li><a href="#latest">小户型玄关怎么放下全家的鞋</a></li>
+              <li><a href="#latest">孩子房间玩具越收越乱的原因</a></li>
+              <li><a href="#latest">夫妻吵架后如何收尾不翻旧账</a></li>
+              <li><a href="#latest">冰箱剩菜的安全存放时间</a></li>
+              <li><a href="#latest">老人独自在家要注意哪些细节</a></li>
+            </ol>
+          </div>
+          <div class="side-card">
+            <h3>参与方式</h3>
+            <ul>
+              <li>按“场景 + 我试过什么 + 结果如何”的格式描述，更容易被理解。</li>
+              <li>涉及健康、用药、用电用气的问题，请以专业意见和当地规定为准。</li>
+              <li>不公开他人隐私信息，不发布可识别的家庭住址与联系方式。</li>
+            </ul>
+          </div>
+          <div class="tip-box">
+            <b>提醒：</b>本站内容属于日常经验交流，不构成医疗、法律或财务专业建议。遇到具体问题，请咨询对应领域的专业人士。
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 经验方法 -->
+  <section class="block" id="methods">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>面对家庭杂事的一套通用思路</h2>
+        <p>家庭事务之所以让人觉得“乱”，常常是因为没有先后顺序。下面四步不解决所有问题，但能让多数琐事从“无从下手”变成“可以开始”。</p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="step">STEP 01</div>
+          <h3>先记录，不急着改变</h3>
+          <p>用几天时间记下家里反复出现的麻烦点：什么时间、谁在场、卡在哪一步。看清规律，比立刻动手改更有效。</p>
+        </div>
+        <div class="method-card">
+          <div class="step">STEP 02</div>
+          <h3>挑一件最影响生活的事</h3>
+          <p>不要同时改十件事。选那件每天都在消耗你精力的事，集中处理，其他先维持原状。</p>
+        </div>
+        <div class="method-card">
+          <div class="step">STEP 03</div>
+          <h3>设计最小可行做法</h3>
+          <p>把改变缩小到“今天就能做”的程度，例如只整理一个抽屉、只约定一条规则。门槛越低越容易坚持。</p>
+        </div>
+        <div class="method-card">
+          <div class="step">STEP 04</div>
+          <h3>一周后复盘再调整</h3>
+          <p>看它是否真的减轻了负担，是否给其他家庭成员带来新麻烦。不合适就换方案，不必执着于最初的想法。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block section-alt" id="faq">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>常见问题</h2>
+        <p>关于家庭杂事和本站内容，整理了几个被问得比较多的问题。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>“家庭乱胔大杂烩”到底指什么？</h3>
+          <p>它更像一个口语化的说法，用来形容家庭生活中各种琐碎事务混在一起的状态：家务、育儿、关系、开销、安全，彼此交织。本站以此为名，正是为了容纳这些不容易被单一分类装下的日常话题。</p>
+        </div>
+        <div class="faq-item">
+          <h3>这里的建议适合所有家庭吗？</h3>
+          <p>不适合。家庭条件、成员结构、居住面积、工作节奏差异很大，同一种做法在不同家庭效果可能完全不同。建议把内容当作参考思路，先小范围试用，再决定是否长期采用。</p>
+        </div>
+        <div class="faq-item">
+          <h3>涉及健康、用药、用电的内容可信吗？</h3>
+          <p>本站只做经验性整理，不能替代专业意见。药品使用、疾病处理、燃气与电路改造等事项，请以医生、药师、专业施工人员和当地管理规定为准。</p>
+        </div>
+        <div class="faq-item">
+          <h3>家务和家庭关系的问题，有统一答案吗？</h3>
+          <p>基本没有。更现实的目标不是“彻底解决”，而是找到一套双方都能接受、可以长期运转的方式。允许它有反复，也允许方案随阶段调整。</p>
+        </div>
+        <div class="faq-item">
+          <h3>怎么判断一个整理方法值不值得试？</h3>
+          <p>看三点：是否减少了每天重复的动作，是否让物品更容易归位，是否不需要额外投入太多时间维护。满足其中两点，通常就值得试一段时间。</p>
+        </div>
+        <div class="faq-item">
+          <h3>内容会涉及具体家庭隐私吗？</h3>
+          <p>不会。本站关注的是普遍场景和方法讨论，不收集、不展示可识别的个人与家庭信息。参与讨论时也请避免透露住址、联系方式等敏感内容。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>关于本站</h2>
+      </div>
+      <p style="max-width:78ch;color:var(--ink-soft);margin:0;">
+        家庭乱胔大杂烩是一个以家庭日常生活为主题的经验分享站点，内容围绕厨房、育儿、收纳、家庭关系、开销与居家安全展开。我们更愿意把话说得具体一些：什么场景下、试过什么、结果如何、哪里行不通。家庭生活没有标准答案，但多一些可参考的做法，总比独自硬扛要好。若你有想聊的场景，也欢迎按分类参与讨论。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>家庭乱胔大杂烩</h4>
+        <p>聚焦家庭琐事的经验分享社区，把日常里的麻烦事摊开来聊，找可执行的参考做法。</p>
+        <p>内容为经验交流，不构成医疗、法律或财务专业建议。</p>
+      </div>
+      <div>
+        <h4>话题分类</h4>
+        <ul>
+          <li><a href="#topics">厨房与三餐</a></li>
+          <li><a href="#topics">育儿与陪伴</a></li>
+          <li><a href="#topics">收纳与整理</a></li>
+          <li><a href="#topics">家庭关系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容入口</h4>
+        <ul>
+          <li><a href="#latest">最新分享</a></li>
+          <li><a href="#methods">经验方法</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#about">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与提醒</h4>
+        <ul>
+          <li>不公开他人隐私信息</li>
+          <li>健康与安全问题请咨询专业人士</li>
+          <li>尊重不同家庭的选择</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 家庭乱胔大杂烩 · 家庭生活经验分享</span>
+      <span>内容仅供参考，请结合实际情况判断</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var links = document.querySelectorAll('.main-nav a');
+    var sections = [];
+    links.forEach(function(a){
+      var id = a.getAttribute('href');
+      if(id && id.charAt(0) === '#'){
+        var el = document.querySelector(id);
+        if(el){ sections.push({link:a, el:el}); }
+      }
+    });
+    if(!sections.length) return;
+    function onScroll(){
+      var pos = window.scrollY + 120;
+      var current = sections[0];
+      sections.forEach(function(s){
+        if(s.el.offsetTop <= pos){ current = s; }
+      });
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if(current && current.link){ current.link.classList.add('active'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+</body>
+                                                                             </html>
