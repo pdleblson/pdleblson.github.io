@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奸狱岛-剧情解析、角色关系与作品背景介绍</title>
+<meta name="description" content="奸狱岛作品专题页，整理奸狱岛的剧情脉络、角色关系、世界观设定、主题解读与常见问题，帮助读者快速了解这部作品的核心内容与观看阅读方向。">
+<meta name="keywords" content="奸狱岛,奸狱岛剧情,奸狱岛角色,奸狱岛解析,奸狱岛背景,奸狱岛作品介绍">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --ink:#12151c;
+    --ink-soft:#2a3040;
+    --paper:#f4f1ea;
+    --paper-2:#e9e4d8;
+    --blood:#8f1d24;
+    --blood-soft:#b8353c;
+    --steel:#556074;
+    --line:#c9c1b0;
+    --warn:#c98a1b;
+    --radius:3px;
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Microsoft YaHei",serif;
+    line-height:1.85;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{
+    width:100%;
+    max-width:var(--wrap);
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ============ 顶部 ============ */
+  .site-head{
+    background:var(--ink);
+    color:#e8e4da;
+    border-bottom:3px solid var(--blood);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .head-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    min-height:66px;
+    flex-wrap:wrap;
+    padding:10px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .brand .mark{
+    font-size:26px;
+    letter-spacing:6px;
+    font-weight:700;
+    color:#fff;
+  }
+  .brand .sub{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#9aa3b5;
+    font-family:"Microsoft YaHei",sans-serif;
+  }
+  .site-nav ul{
+    display:flex;
+    gap:4px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    flex-wrap:wrap;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:14px;
+  }
+  .site-nav a{
+    display:block;
+    padding:8px 14px;
+    color:#c8cddb;
+    border:1px solid transparent;
+    border-radius:var(--radius);
+    transition:.2s;
+  }
+  .site-nav a:hover{
+    color:#fff;
+    border-color:#3c465c;
+    background:#1c2130;
+  }
+
+  /* ============ 首屏 ============ */
+  .hero{
+    background:
+      radial-gradient(circle at 82% 18%, rgba(143,29,36,.35), transparent 55%),
+      linear-gradient(160deg,#191d27 0%,#0d1016 100%);
+    color:#e6e2d8;
+    padding:64px 0 58px;
+    border-bottom:1px solid #000;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr .95fr;
+    gap:44px;
+    align-items:start;
+  }
+  .kicker{
+    display:inline-block;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:12px;
+    letter-spacing:3px;
+    color:#e0b0b3;
+    border:1px solid #6d2a30;
+    padding:4px 12px;
+    border-radius:2px;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:40px;
+    line-height:1.35;
+    margin:0 0 18px;
+    letter-spacing:2px;
+    color:#fff;
+    font-weight:700;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--blood-soft);
+  }
+  .hero p.lead{
+    font-size:16.5px;
+    color:#b9bfcd;
+    margin:0 0 26px;
+    max-width:620px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    font-family:"Microsoft YaHei",sans-serif;
+  }
+  .btn{
+    display:inline-block;
+    padding:11px 24px;
+    font-size:14px;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    transition:.2s;
+    cursor:pointer;
+  }
+  .btn-main{
+    background:var(--blood);
+    color:#fff;
+    border-color:var(--blood);
+  }
+  .btn-main:hover{background:var(--blood-soft);border-color:var(--blood-soft);}
+  .btn-ghost{
+    border-color:#4a5368;
+    color:#d3d8e4;
+  }
+  .btn-ghost:hover{border-color:#8b93a6;color:#fff;}
+
+  .hero-card{
+    background:#161a23;
+    border:1px solid #2b3243;
+    border-top:3px solid var(--blood);
+    padding:24px 24px 22px;
+    border-radius:var(--radius);
+  }
+  .hero-card h2{
+    font-size:15px;
+    letter-spacing:2px;
+    margin:0 0 16px;
+    color:#dfe3ec;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-weight:600;
+  }
+  .fact-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:13.5px;
+  }
+  .fact-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    padding:9px 0;
+    border-bottom:1px dashed #2c3345;
+    color:#a8b0c0;
+  }
+  .fact-list li:last-child{border-bottom:none;}
+  .fact-list b{
+    color:#e8ebf2;
+    font-weight:600;
+    text-align:right;
+  }
+
+  /* ============ 通用区块 ============ */
+  section{padding:56px 0;}
+  .sec-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:12px;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-size:24px;
+    margin:0;
+    letter-spacing:2px;
+    position:relative;
+    padding-left:16px;
+  }
+  .sec-head h2::before{
+    content:"";
+    position:absolute;
+    left:0;top:6px;bottom:6px;
+    width:5px;
+    background:var(--blood);
+  }
+  .sec-head .note{
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:13px;
+    color:var(--steel);
+  }
+
+  /* ============ 剧情脉络 ============ */
+  .story{
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .story-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .story p{margin:0 0 18px;color:#2b3140;}
+  .story strong{color:var(--blood);}
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0 0 0 22px;
+    border-left:2px solid var(--line);
+  }
+  .timeline li{
+    position:relative;
+    padding:0 0 22px 18px;
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-27px;
+    top:8px;
+    width:10px;height:10px;
+    background:var(--paper-2);
+    border:2px solid var(--blood);
+    border-radius:50%;
+  }
+  .timeline h3{
+    font-size:16px;
+    margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  .timeline p{
+    margin:0;
+    font-size:14.5px;
+    color:#4a5164;
+    font-family:"Microsoft YaHei",sans-serif;
+    line-height:1.75;
+  }
+
+  /* ============ 角色卡 ============ */
+  .char-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+  }
+  .char-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    transition:.25s;
+    position:relative;
+    overflow:hidden;
+  }
+  .char-card::after{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:3px;
+    background:var(--line);
+    transition:.25s;
+  }
+  .char-card:hover{
+    box-shadow:0 10px 26px rgba(20,24,34,.12);
+    transform:translateY(-3px);
+  }
+  .char-card:hover::after{background:var(--blood);}
+  .char-card .tag{
+    display:inline-block;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:11.5px;
+    letter-spacing:1px;
+    color:#fff;
+    background:var(--steel);
+    padding:2px 9px;
+    border-radius:2px;
+    margin-bottom:12px;
+  }
+  .char-card h3{
+    font-size:18px;
+    margin:0 0 4px;
+    letter-spacing:1px;
+  }
+  .char-card .role{
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:12.5px;
+    color:var(--blood);
+    margin-bottom:12px;
+  }
+  .char-card p{
+    margin:0;
+    font-size:14.5px;
+    color:#4a5164;
+    font-family:"Microsoft YaHei",sans-serif;
+    line-height:1.8;
+  }
+
+  /* ============ 主题解读 ============ */
+  .theme{
+    background:var(--ink);
+    color:#cdd3df;
+    border-top:3px solid var(--blood);
+  }
+  .theme .sec-head{border-bottom-color:#3a4254;}
+  .theme .sec-head h2{color:#fff;}
+  .theme .sec-head .note{color:#8b93a6;}
+  .theme-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+  }
+  .theme-item{
+    border:1px solid #2f3749;
+    border-radius:var(--radius);
+    padding:24px 22px;
+    background:#171b25;
+  }
+  .theme-item .num{
+    font-family:Georgia,serif;
+    font-size:34px;
+    color:var(--blood-soft);
+    line-height:1;
+    margin-bottom:12px;
+  }
+  .theme-item h3{
+    font-size:17px;
+    margin:0 0 10px;
+    color:#fff;
+    letter-spacing:1px;
+  }
+  .theme-item p{
+    margin:0;
+    font-size:14.5px;
+    color:#9ea6b8;
+    font-family:"Microsoft YaHei",sans-serif;
+    line-height:1.85;
+  }
+
+  /* ============ 观看阅读建议 ============ */
+  .guide-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  .guide-box h3{
+    font-size:18px;
+    margin:0 0 14px;
+    letter-spacing:1px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .guide-box ul{
+    margin:0;
+    padding-left:20px;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:14.5px;
+    color:#3d4453;
+  }
+  .guide-box li{margin-bottom:10px;}
+  .guide-box li b{color:var(--ink);}
+
+  /* ============ FAQ ============ */
+  .faq{background:var(--paper-2);border-top:1px solid var(--line);}
+  .faq-list{
+    display:grid;
+    gap:12px;
+    max-width:900px;
+  }
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:0;
+    overflow:hidden;
+  }
+  details[open]{border-color:var(--blood);}
+  summary{
+    cursor:pointer;
+    padding:16px 20px;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:1px;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:20px;
+    color:var(--blood);
+    line-height:1;
+    flex:0 0 auto;
+  }
+  details[open] summary::after{content:"−";}
+  details .answer{
+    padding:0 20px 18px;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:14.5px;
+    color:#4a5164;
+    line-height:1.85;
+  }
+
+  /* ============ 页脚 ============ */
+  footer{
+    background:#0d1016;
+    color:#8b93a6;
+    padding:44px 0 30px;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-size:13.5px;
+    border-top:3px solid var(--blood);
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:34px;
+    padding-bottom:28px;
+    border-bottom:1px solid #222836;
+  }
+  .foot-grid h4{
+    color:#e2e6ee;
+    font-size:14px;
+    margin:0 0 14px;
+    letter-spacing:1px;
+  }
+  .foot-grid p{margin:0 0 10px;line-height:1.8;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;}
+  .foot-grid li{margin-bottom:9px;}
+  .foot-grid a:hover{color:#e2e6ee;}
+  .foot-bottom{
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    color:#5d6579;
+    font-size:12.5px;
+  }
+
+  /* ============ 响应式 ============ */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .story-grid{grid-template-columns:1fr;gap:32px;}
+    .guide-grid{grid-template-columns:1fr;gap:28px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:32px;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .head-inner{min-height:auto;}
+    .brand .mark{font-size:21px;letter-spacing:4px;}
+    .site-nav ul{font-size:13px;}
+    .site-nav a{padding:6px 10px;}
+    .hero{padding:44px 0 40px;}
+    .hero h1{font-size:26px;letter-spacing:1px;}
+    .hero p.lead{font-size:15px;}
+    section{padding:40px 0;}
+    .sec-head h2{font-size:20px;}
+    .foot-grid{grid-template-columns:1fr;gap:24px;}
+    .btn{padding:10px 18px;font-size:13.5px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <div class="brand">
+      <span class="mark">奸狱岛</span>
+      <span class="sub">作品专题 · 剧情与角色解析</span>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#story">剧情脉络</a></li>
+        <li><a href="#characters">角色关系</a></li>
+        <li><a href="#theme">主题解读</a></li>
+        <li><a href="#guide">观看建议</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">作品专题</span>
+        <h1>奸狱岛：一座孤岛上的<em>秩序、欲望与困局</em></h1>
+        <p class="lead">
+          “奸狱岛”作为一个作品名称，本身就把封闭空间、权力压迫与人性试探三重要素压缩在一起。
+          本页围绕奸狱岛的剧情走向、人物关系、世界观设定与主题表达做系统梳理，
+          适合刚接触这部作品、想先弄清故事在讲什么，以及希望回看细节的读者参考。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#story">从剧情开始了解</a>
+          <a class="btn btn-ghost" href="#faq">先看常见问题</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>作品速览</h2>
+        <ul class="fact-list">
+          <li><span>作品类型</span><b>剧情 / 悬疑 / 人性题材</b></li>
+          <li><span>核心场景</span><b>与世隔绝的孤岛</b></li>
+          <li><span>叙事重心</span><b>人物关系与规则冲突</b></li>
+          <li><span>主要看点</span><b>层层反转与动机揭示</b></li>
+          <li><span>阅读门槛</span><b>建议按顺序完整观看</b></li>
+          <li><span>适合人群</span><b>偏好暗黑现实向故事者</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 剧情脉络 ============ -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>剧情脉络</h2>
+        <span class="note">按故事推进顺序梳理，含少量设定说明</span>
+      </div>
+
+      <div class="story-grid">
+        <div>
+          <p>
+            奸狱岛的故事起点，是一群人被置于一座与外界几乎断联的岛屿之上。
+            岛屿本身既是物理空间，也是叙事装置：四面环海意味着<strong>无法轻易逃离</strong>，
+            而岛内自成一套的规矩，则让“谁说了算”成为比生存更棘手的问题。
+          </p>
+          <p>
+            随着情节推进，作品逐渐从“如何活下去”转向“为什么活成现在这样”。
+            角色之间的信任被反复测试，过去的经历被一点点揭开，
+            每个人看似合理的选择背后，都藏着不愿被他人看见的动机。
+            这种把外部困境与内部秘密交织的写法，是奸狱岛最典型的叙事手法。
+          </p>
+          <p>
+            值得注意的是，作品并不急于给出道德判断。它更像是在呈现一种状态：
+            当规则由少数人制定、当信息不对等持续存在，
+            身处其中的人会做出怎样的取舍。理解这一点，再看后续的冲突与结局，会顺畅很多。
+          </p>
+        </div>
+
+        <ol class="timeline">
+          <li>
+            <h3>登场与隔离</h3>
+            <p>主要人物被集中到孤岛，外部联系被切断，生存与身份问题同时浮现。</p>
+          </li>
+          <li>
+            <h3>规则建立</h3>
+            <p>岛内逐渐形成一套不成文的秩序，谁掌握资源与信息，谁就掌握话语权。</p>
+          </li>
+          <li>
+            <h3>关系裂变</h3>
+            <p>合作与背叛交替出现，人物之间的立场因利益与过往而不断重组。</p>
+          </li>
+          <li>
+            <h3>真相浮现</h3>
+            <p>被刻意隐藏的经历与动机陆续揭开，早期看似随意的细节开始回收。</p>
+          </li>
+          <li>
+            <h3>收束与余味</h3>
+            <p>冲突走向结果，但作品更在意留下关于人性与选择的思考空间。</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 角色关系 ============ -->
+  <section id="characters">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>角色关系</h2>
+        <span class="note">以功能定位划分，便于快速建立人物印象</span>
+      </div>
+
+      <div class="char-grid">
+        <article class="char-card">
+          <span class="tag">核心视角</span>
+          <h3>主角型人物</h3>
+          <div class="role">观察者 / 推动者</div>
+          <p>
+            通常承担带领读者进入故事的职责。其判断与选择会直接影响事件走向，
+            也最容易在压力下暴露真实的一面。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <span class="tag">秩序维护者</span>
+          <h3>规则制定方</h3>
+          <div class="role">权力一方</div>
+          <p>
+            掌握岛内资源分配与信息渠道，表面维持稳定，
+            其立场与真实目的往往构成故事的主要张力来源。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <span class="tag">变量人物</span>
+          <h3>立场摇摆者</h3>
+          <div class="role">关键转折点</div>
+          <p>
+            在多方之间来回权衡，其每一次选择都可能改写局势，
+            是推动反转的重要角色类型。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <span class="tag">情感支点</span>
+          <h3>关系纽带</h3>
+          <div class="role">信任与牵绊</div>
+          <p>
+            为冷硬的生存叙事提供情感落点，
+            让角色的行为动机更容易被理解，也让冲突更具分量。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 主题解读 ============ -->
+  <section class="theme" id="theme">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>主题解读</h2>
+        <span class="note">从三个角度理解奸狱岛想表达什么</span>
+      </div>
+
+      <div class="theme-grid">
+        <div class="theme-item">
+          <div class="num">01</div>
+          <h3>封闭空间与人性放大</h3>
+          <p>
+            孤岛切断了退路，也放大了人的本能反应。
+            当逃避不再可能，平日被掩饰的性格侧面会更快显露出来，
+            这正是作品选择岛屿作为舞台的原因。
+          </p>
+        </div>
+        <div class="theme-item">
+          <div class="num">02</div>
+          <h3>规则由谁书写</h3>
+          <p>
+            岛内的秩序并非天然存在，而是被有意建立和维护。
+            作品反复追问：当规则本身并不公平时，
+            遵守与反抗各自的代价是什么。
+          </p>
+        </div>
+        <div class="theme-item">
+          <div class="num">03</div>
+          <h3>选择与代价</h3>
+          <p>
+            几乎每个角色都要面对两难处境。
+            作品不提供轻松答案，而是让观众看到：
+            任何决定都会留下后果，区别只在于由谁承担。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 观看建议 ============ -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>观看与理解建议</h2>
+        <span class="note">帮助减少中途迷惑，提升整体体验</span>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-box">
+          <h3>初次接触时</h3>
+          <ul>
+            <li><b>按顺序观看：</b>奸狱岛的信息释放节奏经过设计，跳看容易错过关键铺垫。</li>
+            <li><b>留意配角反应：</b>很多线索藏在次要人物的表情与对话里，而非主线台词。</li>
+            <li><b>先接受模糊：</b>前期刻意保留的信息不必急于求解，后续通常会有回应。</li>
+            <li><b>记录人物立场：</b>关系变化较频繁，简单记下谁和谁结盟会更容易跟上。</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <h3>回看与讨论时</h3>
+          <ul>
+            <li><b>关注细节回收：</b>早期出现的物件、对白往往在后期被重新赋予意义。</li>
+            <li><b>区分动机与行为：</b>角色的做法未必代表其真实目的，两者分开看更清楚。</li>
+            <li><b>避免单一道德评判：</b>作品倾向呈现复杂性，非黑即白的结论容易偏离原意。</li>
+            <li><b>结合结局回推：</b>知道结果后再看前段，会发现不少被忽略的伏笔。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <span class="note">关于奸狱岛的高频疑问</span>
+      </div>
+
+      <div class="faq-list">
+        <details open>
+          <summary>奸狱岛讲的是什么故事？</summary>
+          <div class="answer">
+            故事围绕一群被置于封闭孤岛上的角色展开，外部联系被切断，
+            岛内逐渐形成自己的秩序。作品通过人物之间的合作、对抗与背叛，
+            探讨规则、权力与人性的关系，属于偏现实向的剧情悬疑题材。
+          </div>
+        </details>
+
+        <details>
+          <summary>没看过前作或原作，能直接看奸狱岛吗？</summary>
+          <div class="answer">
+            奸狱岛的故事相对独立，直接进入通常不会造成理解障碍。
+            不过由于人物关系较为密集，建议从第一话或第一集开始按顺序观看，
+            避免因跳跃而遗漏关键铺垫。
+          </div>
+        </details>
+
+        <details>
+          <summary>作品为什么叫“奸狱岛”？</summary>
+          <div class="answer">
+            这个名称可以理解为对故事核心的浓缩：岛屿既是物理上的囚笼，
+            也象征着由人心与规则共同构成的困境。
+            名称本身带有强烈的冲突感，与作品的整体基调一致。
+          </div>
+        </details>
+
+        <details>
+          <summary>适合什么样的观众？</summary>
+          <div class="answer">
+            偏好暗黑现实向、喜欢琢磨人物动机、能接受慢热铺垫的观众会更契合。
+            如果更倾向轻松明快的题材，可能会觉得氛围偏压抑，建议先了解简介再决定。
+          </div>
+        </details>
+
+        <details>
+          <summary>看的时候容易混乱，有什么办法？</summary>
+          <div class="answer">
+            可以简单记录人物立场的变化，尤其是谁在何时改变阵营。
+            另外，遇到暂时无法解释的情节不必着急，
+            奸狱岛的信息释放是有节奏的，很多疑问会在后续段落中得到回应。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于本页</h4>
+        <p>
+          本页为“奸狱岛”作品主题整理，内容聚焦剧情结构、角色功能与主题表达，
+          旨在帮助读者更快进入作品语境。
+        </p>
+        <p>页面内容以介绍与解读为主，不涉及任何资源分发。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#story">剧情脉络</a></li>
+          <li><a href="#characters">角色关系</a></li>
+          <li><a href="#theme">主题解读</a></li>
+          <li><a href="#guide">观看建议</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读提示</h4>
+        <ul>
+          <li>建议按顺序完整观看</li>
+          <li>留意细节与伏笔回收</li>
+          <li>人物动机需结合前后文判断</li>
+          <li>不同解读均可保留</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>奸狱岛 · 作品专题页</span>
+      <span>内容仅作介绍与交流参考</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+                                  </html>
